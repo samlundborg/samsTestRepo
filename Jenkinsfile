@@ -1,7 +1,11 @@
 pipeline {
     agent any
     stages {
-               
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/samlundborg/samsTestRepo.git'
+            }
+        }
         stage('Robot Framework System tests with Selenium') {
             steps {
                 sh 'robot --variable BROWSER:headlesschrome -d PetClinic_Localhost/Results PetClinic_Localhost/Tests'
