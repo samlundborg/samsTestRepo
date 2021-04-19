@@ -1,11 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/samlundborg/samsTestRepo.git'
-            }
-        }
+        
         stage('Build') {
             steps {
                 sh "mvn compile"
